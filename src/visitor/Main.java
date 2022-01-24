@@ -18,9 +18,6 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public Main() {
-    }
-
     public static void main(String[] args) {
         launch(args);
     }
