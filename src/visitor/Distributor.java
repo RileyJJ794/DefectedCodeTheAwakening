@@ -1,10 +1,10 @@
 package visitor;
 
 /**
- * This is a premium shopper, they will get special deals and different options for
- * shipping and handling.
+ * The distributor is a shopper that will want to buy products in bulk. This will
+ * result in different pricing, shipping times, and handling. Perfect for the pattern
  */
-public class PremiumShopper implements Shopper {
+public class Distributor implements Shopper {
     @Override
     public int visit(GPU gpu) {
         return 0;
