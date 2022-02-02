@@ -5,7 +5,7 @@ Classes to be implemented by Andrew Crisler:
 Classes related to Domain displaying classes and solution level classes. This includes: Client, Main, ProductList, ShoppingCart, Amazon2Controller
 
 Classes to be implemented by Riley Jensen:
-Classes related to the elements. This includes: Product, GPU, Potatoes, Deoderant
+Classes related to the elements. This includes: Product, GPU, Potatoes, Rent-a-car
 
 
 Classes to be implemented by Eli Hamp:
