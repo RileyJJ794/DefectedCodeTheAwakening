@@ -4,12 +4,19 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
+        WebView browser = new WebView();
+        WebEngine webEngine = browser.getEngine();
+        webEngine.load("http://mySite.com");
+
         Parent root = FXMLLoader.load(getClass().getResource("Amazon2.fxml"));
         primaryStage.setTitle("The Future of Amazon");
         primaryStage.setScene(new Scene(root));
