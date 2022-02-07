@@ -1,4 +1,7 @@
-package visitor;
+package visitor.products;
+
+import visitor.shoppers.Shopper;
+import visitor.display.DisplayShell;
 
 /**
  * The RentACarProduct will be priced by the time it is rented (per hour or day)

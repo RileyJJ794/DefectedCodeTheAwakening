@@ -1,4 +1,7 @@
-package visitor;
+package visitor.products;
+
+import visitor.shoppers.Shopper;
+import visitor.display.DisplayShell;
 
 /**
  * A GPU will be prices by the amount

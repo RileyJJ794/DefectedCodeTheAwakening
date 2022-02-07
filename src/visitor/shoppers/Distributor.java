@@ -1,4 +1,9 @@
-package visitor;
+package visitor.shoppers;
+
+import visitor.products.GPU;
+import visitor.products.Potatoes;
+import visitor.products.RentACarProduct;
+import visitor.display.DisplayShell;
 
 /**
  * The distributor is a shopper that will want to buy products in bulk. This will

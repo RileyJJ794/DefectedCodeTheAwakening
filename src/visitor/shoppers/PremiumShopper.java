@@ -1,4 +1,9 @@
-package visitor;
+package visitor.shoppers;
+
+import visitor.products.RentACarProduct;
+import visitor.display.DisplayShell;
+import visitor.products.GPU;
+import visitor.products.Potatoes;
 
 /**
  * This is a premium shopper, they will get special deals and different options for
