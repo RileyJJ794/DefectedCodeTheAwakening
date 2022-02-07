@@ -1,7 +1,7 @@
 package visitor;
 
 public interface Shopper {
-    int visit(GPU gpu);
-    int visit(Potatoes potatoes);
-    int visit(RentACarProduct deodorant);
+    DisplayShell visit(GPU gpu);
+    DisplayShell visit(Potatoes potatoes);
+    DisplayShell visit(RentACarProduct deodorant);
 }

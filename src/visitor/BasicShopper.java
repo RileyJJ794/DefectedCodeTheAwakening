@@ -5,17 +5,17 @@ package visitor;
  */
 public class BasicShopper implements Shopper {
     @Override
-    public int visit(GPU gpu) {
-        return 0;
+    public DisplayShell visit(GPU gpu) {
+        return null;
     }
 
     @Override
-    public int visit(Potatoes potatoes) {
-        return 0;
+    public DisplayShell visit(Potatoes potatoes) {
+        return null;
     }
 
     @Override
-    public int visit(RentACarProduct deodorant) {
-        return 0;
+    public DisplayShell visit(RentACarProduct deodorant) {
+        return null;
     }
 }

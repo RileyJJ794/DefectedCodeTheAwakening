@@ -61,14 +61,8 @@ public class Amazon2Controller {
     }
 
     public void createInterface(Shopper shopper, Collection<Product> products){
-        for(Product product : products){ //this is not an ideal way of doing this
-            if(product instanceof GPU){
-                shopper.visit((GPU) product);
-            } else if (product instanceof Potatoes) {
-                shopper.visit((Potatoes) product);
-            } else {
-                shopper.visit((RentACarProduct) product);
-            }
+        for(Product product : products){
+            mainDisplay.getChildren().add(product.accept(shopper).displayMain());
         }
     }
 }

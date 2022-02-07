@@ -5,7 +5,7 @@ package visitor;
  */
 public class RentACarProduct implements Product {
     @Override
-    public int accept(Shopper shopper) {
+    public DisplayShell accept(Shopper shopper) {
         return shopper.visit(this);
     }
 }

@@ -6,7 +6,7 @@ package visitor;
 public class Potatoes implements Product {
 
     @Override
-    public int accept(Shopper shopper) {
+    public DisplayShell accept(Shopper shopper) {
         return shopper.visit(this);
     }
 }
