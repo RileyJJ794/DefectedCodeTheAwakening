@@ -12,6 +12,7 @@ public class GPU implements Product {
     private int shippingTime = 8;
     private String handlingType = "plain box";
     private Image gpuImage;
+    private final String name = "Nvidia GeForce RTX 3050 ti";
 
     @Override
     public DisplayShell accept(Shopper shopper) {
@@ -22,16 +23,8 @@ public class GPU implements Product {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public int getShippingTime() {
         return shippingTime;
-    }
-
-    public void setShippingTime(int shippingTime) {
-        this.shippingTime = shippingTime;
     }
 
     public String getHandlingType() {
@@ -46,7 +39,8 @@ public class GPU implements Product {
         return gpuImage;
     }
 
-    public void setGpuImage(Image gpuImage) {
-        this.gpuImage = gpuImage;
+    public String getName() {
+        return name;
     }
+
 }
