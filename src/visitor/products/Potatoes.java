@@ -10,6 +10,8 @@ public class Potatoes implements Product {
     private int pricePerPound = 1;
     private int shippingTime = 10;
     private String handlingType = "plain box";
+    private String name = "Potato";
+
     @Override
     public DisplayShell accept(Shopper shopper) {
         return shopper.visit(this);
@@ -25,5 +27,9 @@ public class Potatoes implements Product {
 
     public String getHandlingType() {
         return handlingType;
+    }
+
+    public String getName() {
+        return name;
     }
 }

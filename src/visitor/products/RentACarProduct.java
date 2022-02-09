@@ -10,6 +10,8 @@ public class RentACarProduct implements Product {
     private int pricePerDay =  250;
     private int shippingTime = 10;
     private String handlingType = "plain box";
+    private String name = "Jeep";
+
     @Override
     public DisplayShell accept(Shopper shopper) {
         return shopper.visit(this);
@@ -25,5 +27,9 @@ public class RentACarProduct implements Product {
 
     public String getHandlingType() {
         return handlingType;
+    }
+
+    public String getName() {
+        return name;
     }
 }
