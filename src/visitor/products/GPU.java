@@ -4,15 +4,18 @@ import javafx.scene.image.Image;
 import visitor.shoppers.Shopper;
 import visitor.display.DisplayShell;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * A GPU will be prices by the amount
  */
 public class GPU implements Product {
     private int price = 100000;
     private int shippingTime = 8;
-    private String handlingType = "plain box";
+    private ArrayList<String> handlingType = new ArrayList<>(Arrays.asList("Plain Box", "RGB Box"));
+    private final String name = "Nvidia GeForce RTX 3090";
     private Image gpuImage;
-    private final String name = "Nvidia GeForce RTX 3050 ti";
 
     @Override
     public DisplayShell accept(Shopper shopper, int quantity) {
@@ -27,13 +30,6 @@ public class GPU implements Product {
         return shippingTime;
     }
 
-    public String getHandlingType() {
-        return handlingType;
-    }
-
-    public void setHandlingType(String handlingType) {
-        this.handlingType = handlingType;
-    }
 
     public Image getGpuImage() {
         return gpuImage;
@@ -43,4 +39,7 @@ public class GPU implements Product {
         return name;
     }
 
+    public ArrayList<String> getHandlingType() {
+        return handlingType;
+    }
 }

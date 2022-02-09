@@ -10,6 +10,8 @@ import visitor.display.DisplayShell;
  * result in different pricing, shipping times, and handling. Perfect for the pattern
  */
 public class Distributor implements Shopper {
+    private final String handlingType = "Shipping Container";
+
     @Override
     public DisplayShell visit(GPU gpu, int quantity) {
         return null;
