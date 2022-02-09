@@ -1,7 +1,11 @@
 package visitor.products;
 
+import javafx.scene.image.Image;
 import visitor.shoppers.Shopper;
 import visitor.display.DisplayShell;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The potatoes will be priced by the pound
@@ -9,8 +13,9 @@ import visitor.display.DisplayShell;
 public class Potatoes implements Product {
     private int pricePerPound = 1;
     private int shippingTime = 10;
-    private String handlingType = "plain box";
+    private ArrayList<String> handlingType = new ArrayList<>(Arrays.asList("In a plain bag", "In a padded cooler"));
     private String name = "Potato";
+    private static Image potatoImage = new Image("src/visitor/images/potatos.jpeg"); //url does not work
 
     @Override
     public DisplayShell accept(Shopper shopper, int quantity) {
@@ -25,11 +30,16 @@ public class Potatoes implements Product {
         return shippingTime;
     }
 
-    public String getHandlingType() {
+    public ArrayList<String> getHandlingType() {
         return handlingType;
     }
 
     public String getName() {
         return name;
     }
+
+    public Image getImage() {
+        return potatoImage;
+    }
+
 }
