@@ -6,7 +6,7 @@ import visitor.products.Potatoes;
 import visitor.products.RentACarProduct;
 
 public interface Shopper {
-    DisplayShell visit(GPU gpu);
-    DisplayShell visit(Potatoes potatoes);
-    DisplayShell visit(RentACarProduct deodorant);
+    DisplayShell visit(GPU gpu, int quantity);
+    DisplayShell visit(Potatoes potatoes, int quantity);
+    DisplayShell visit(RentACarProduct deodorant, int quantity);
 }

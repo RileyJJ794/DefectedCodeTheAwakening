@@ -13,8 +13,8 @@ public class RentACarProduct implements Product {
     private String name = "Jeep";
 
     @Override
-    public DisplayShell accept(Shopper shopper) {
-        return shopper.visit(this);
+    public DisplayShell accept(Shopper shopper, int quantity) {
+        return shopper.visit(this, quantity);
     }
 
     public int getPricePerDay() {

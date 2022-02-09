@@ -13,8 +13,8 @@ public class Potatoes implements Product {
     private String name = "Potato";
 
     @Override
-    public DisplayShell accept(Shopper shopper) {
-        return shopper.visit(this);
+    public DisplayShell accept(Shopper shopper, int quantity) {
+        return shopper.visit(this, quantity);
     }
 
     public int getPricePerPound() {

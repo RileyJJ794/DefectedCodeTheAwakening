@@ -11,17 +11,17 @@ import visitor.display.DisplayShell;
  */
 public class Distributor implements Shopper {
     @Override
-    public DisplayShell visit(GPU gpu) {
+    public DisplayShell visit(GPU gpu, int quantity) {
         return null;
     }
 
     @Override
-    public DisplayShell visit(Potatoes potatoes) {
+    public DisplayShell visit(Potatoes potatoes, int quantity) {
         return null;
     }
 
     @Override
-    public DisplayShell visit(RentACarProduct deodorant) {
+    public DisplayShell visit(RentACarProduct deodorant, int quantity) {
         return null;
     }
 }

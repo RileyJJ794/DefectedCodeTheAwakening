@@ -8,7 +8,7 @@ import visitor.display.DisplayShell;
  */
 public class GPU implements Product {
     @Override
-    public DisplayShell accept(Shopper shopper) {
-        return shopper.visit(this);
+    public DisplayShell accept(Shopper shopper, int quantity) {
+        return shopper.visit(this, quantity);
     }
 }
