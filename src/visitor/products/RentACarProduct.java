@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class RentACarProduct implements Product {
     private int pricePerDay =  250;
     private int shippingTime = 10;
-    private ArrayList<String> handlingType = new java.util.ArrayList<>(Arrays.asList("On an open trailer", "On a closed, climate controled trailer"));
+    private ArrayList<String> handlingType = new java.util.ArrayList<>(Arrays.asList("On an open trailer", "On a closed, climate controlled trailer"));
     private String name = "Lambo";
     private static Image carImage = new Image("src/visitor/images/car.jpeg");
 

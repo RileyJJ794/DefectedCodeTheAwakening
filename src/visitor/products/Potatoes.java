@@ -22,7 +22,7 @@ public class Potatoes implements Product {
         return shopper.visit(this, quantity);
     }
 
-    public int getPricePerPound() {
+    public int getPrice() {
         return pricePerPound;
     }
 
@@ -38,7 +38,7 @@ public class Potatoes implements Product {
         return name;
     }
 
-    public Image getImage() {
+    public Image getPotatoImage() {
         return potatoImage;
     }
 
