@@ -15,22 +15,21 @@ import java.util.LinkedList;
 import java.util.Map;
 
 public class Catalog {
-
     private Shopper shopper;
     private Collection<Product> products;
-    private Map<Product, Integer> productsInCart;
+    private Collection<PurchaseOrder> productsInCart;
     private VBox catalogView;
     private Label numProductsInCart;
 
     public Catalog(Shopper shopper, Collection<Product> products, VBox view, Label numProductsInCart){
         this.shopper = shopper;
         this.products = products;
-        this.productsInCart = new HashMap<>();
+        this.productsInCart = new LinkedList<>();
         this.numProductsInCart = numProductsInCart;
         catalogView = generateView(view);
     }
 
-    public Catalog(Shopper shopper, Collection<Product> products, Map<Product, Integer> productsInCart, VBox view, Label numProductsInCart){
+    public Catalog(Shopper shopper, Collection<Product> products, Collection<PurchaseOrder> productsInCart, VBox view, Label numProductsInCart){
         this(shopper, products, view, numProductsInCart);
         this.productsInCart = productsInCart;
     }
@@ -48,7 +47,7 @@ public class Catalog {
             Button button = new Button("Add to Cart");
             button.setOnAction((event) -> {
                 int amount = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
-                productsInCart.put(product, amount);
+                productsInCart.add(new PurchaseOrder(product, amount));
                 numProductsInCart.setText("" + (Integer.parseInt(numProductsInCart.getText()) + 1));
                 button.setText("Buy Another");
             });

@@ -15,11 +15,11 @@ import java.util.Map;
 public class ShoppingCart {
 
     private Shopper shopper;
-    private Map<Product, Integer> productsInCart;
+    private Collection<PurchaseOrder> productsInCart;
     private VBox cartView;
     private Label numProductsInCart;
 
-    public ShoppingCart(Shopper shopper, Map<Product, Integer> productsInCart, VBox view, Label numProductsInCart){
+    public ShoppingCart(Shopper shopper, Collection<PurchaseOrder> productsInCart, VBox view, Label numProductsInCart){
         this.shopper = shopper;
         this.productsInCart = productsInCart;
         this.cartView = generateView(view);
@@ -28,16 +28,16 @@ public class ShoppingCart {
 
     private VBox generateView(VBox view) {
         view.getChildren().clear();
-        for(Product product : productsInCart.keySet()){
+        for(PurchaseOrder order : productsInCart){
             Button button = new Button("Remove From Cart");
             button.setOnAction((event) -> {
-                productsInCart.remove(product);
-                view.getChildren().remove(product);
+                productsInCart.remove(order);
+                view.getChildren().remove(order);
                 numProductsInCart.setText("" + (Integer.parseInt(numProductsInCart.getText()) - 1));
                 generateView(view); //reset view
             });
 
-            view.getChildren().add(new HBox(product.accept(shopper, productsInCart.get(product)).displayCart(), button));
+            view.getChildren().add(new HBox(order.getProduct().accept(shopper, order.getAmount()).displayCart(), button));
         }
         return view;
     }
