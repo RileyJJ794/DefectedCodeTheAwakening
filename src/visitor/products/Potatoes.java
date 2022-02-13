@@ -4,6 +4,8 @@ import javafx.scene.image.Image;
 import visitor.shoppers.Shopper;
 import visitor.display.DisplayShell;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -15,8 +17,15 @@ public class Potatoes implements Product {
     private int shippingTime = 10;
     private ArrayList<String> handlingType = new ArrayList<>(Arrays.asList("In a plain bag", "In a padded cooler"));
     private String name = "Potato";
-    private static Image potatoImage = new Image("src/visitor/images/potatos.jpeg"); //url does not work
+    private static Image potatoImage;
 
+    public Potatoes() {
+        try { //image was not happy with the string url, the file input stream fixed the problem
+            potatoImage = new Image(new FileInputStream("src/resources/images/potatoes.jpeg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public DisplayShell accept(Shopper shopper, int quantity) {
         return shopper.visit(this, quantity);

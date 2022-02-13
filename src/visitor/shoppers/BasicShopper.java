@@ -23,8 +23,8 @@ public class BasicShopper implements Shopper {
 
     @Override
     public DisplayShell visit(Potatoes potatoes, int quantity) {
-        int price = potatoes.getPricePerPound();
-        int shippingTime = potatoes.getPricePerPound();
+        int price = potatoes.getPrice();
+        int shippingTime = potatoes.getShippingTime();
         String handlingType = potatoes.getHandlingType().get(0);
         String name = potatoes.getName();
         return null;

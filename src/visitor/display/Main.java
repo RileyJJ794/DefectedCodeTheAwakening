@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Amazon2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../resources/Amazon2.fxml"));
         primaryStage.setTitle("The Future of Amazon");
         primaryStage.setScene(new Scene(root));
         primaryStage.setWidth(900.0);
