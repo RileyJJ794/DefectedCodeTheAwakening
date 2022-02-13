@@ -18,6 +18,7 @@ public class Potatoes implements Product {
     private ArrayList<String> handlingType = new ArrayList<>(Arrays.asList("In a plain bag", "In a padded cooler"));
     private String name = "Potato";
     private static Image potatoImage;
+    private static String description = "a bunch of potatoes sold online for all of your potato needs"; //FIXME - fill this out
 
     public Potatoes() {
         try { //image was not happy with the string url, the file input stream fixed the problem
@@ -51,4 +52,7 @@ public class Potatoes implements Product {
         return potatoImage;
     }
 
+    public String getDescription(){
+        return description;
+    }
 }

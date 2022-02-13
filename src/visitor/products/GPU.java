@@ -18,6 +18,7 @@ public class GPU implements Product {
     private ArrayList<String> handlingType = new ArrayList<>(Arrays.asList("Plain Box", "RGB Box"));
     private final String name = "Nvidia GeForce RTX 3090";
     private Image gpuImage;
+    private static String description = "a gpu"; //FIXME - fill this out
 
     public GPU() {
         try { //image was not happy with the string url, the file input stream fixed the problem
@@ -51,5 +52,9 @@ public class GPU implements Product {
 
     public ArrayList<String> getHandlingType() {
         return handlingType;
+    }
+
+    public String getDescription(){
+        return description;
     }
 }

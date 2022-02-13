@@ -62,7 +62,10 @@ public class Amazon2Controller {
         setButtonMenuVisibility(false); //no user currently logged in
         logoutMenuSave = (Pane) mainDisplay.getChildren().get(0); //save the logout menu
 
-        logout.setOnAction((event) -> displayLogoutMenu());
+        logout.setOnAction((event) -> {
+            numProducts.setText("0");
+            displayLogoutMenu();
+        });
 
         basicUserButton.setOnAction((event) -> createCatalogMenu("Basic User", new BasicShopper(), products));
 

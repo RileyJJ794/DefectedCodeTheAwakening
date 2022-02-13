@@ -5,72 +5,57 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visitor.display.Amazon2Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+<VBox prefHeight="699.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visitor.display.Amazon2Controller">
    <children>
-      <VBox prefHeight="699.0" prefWidth="900.0">
+      <HBox prefHeight="40.0" prefWidth="900.0" style="-fx-background-color: lightgray;">
          <children>
-            <HBox prefHeight="40.0" prefWidth="900.0">
+            <Label fx:id="welcomeLabel" prefHeight="40.0" prefWidth="200.0" text="Welcome To Amazon2">
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <Pane prefHeight="200.0" prefWidth="400.0" />
+            <HBox fx:id="buttonMenu" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
                <children>
-                  <Label fx:id="welcomeLabel" prefHeight="40.0" prefWidth="200.0" text="Welcome To Amazon2">
-                     <padding>
-                        <Insets left="10.0" right="10.0" />
-                     </padding>
-                  </Label>
-                  <Pane prefHeight="200.0" prefWidth="400.0" />
-                  <HBox fx:id="buttonMenu" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="300.0">
+                  <Button fx:id="switchViews" mnemonicParsing="false" prefWidth="150.0" text="Shopping Cart">
                      <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <padding>
                         <Insets right="10.0" />
-                     </padding>
-                     <children>
-                        <Button fx:id="switchViews" mnemonicParsing="false" prefWidth="150.0" text="Shopping Cart">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Label fx:id="numProducts" prefWidth="50.0" text="0"/>
-                        <Button fx:id="logout" mnemonicParsing="false" text="Logout" />
-                     </children>
-                  </HBox>
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="numProducts" prefWidth="50.0" text="0" />
+                  <Button fx:id="logout" mnemonicParsing="false" text="Logout" />
                </children>
             </HBox>
-            <Pane fx:id="mainDisplay" prefHeight="660.0" prefWidth="900.0">
-               <children>
-                  <VBox alignment="CENTER" prefHeight="660.0" prefWidth="900.0">
-                     <children>
-                        <Label text="Please pick your user type" />
-                        <MenuButton alignment="TOP_LEFT" mnemonicParsing="false" text="User Type">
-                          <items>
-                              <MenuItem fx:id="basicUserButton" mnemonicParsing="false" text="Basic User" />
-                            <MenuItem fx:id="primeUserButton" mnemonicParsing="false" text="Prime User" />
-                            <MenuItem fx:id="distributorButton" mnemonicParsing="false" text="Distributor" />
-                          </items>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                        </MenuButton>
-                     </children>
-                  </VBox>
-               </children>
-            </Pane>
          </children>
-      </VBox>
+      </HBox>
+      <Pane fx:id="mainDisplay" prefHeight="660.0" prefWidth="900.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="660.0" prefWidth="900.0">
+               <children>
+                  <Label text="Please pick your user type" />
+                  <MenuButton alignment="TOP_LEFT" mnemonicParsing="false" text="User Type">
+                     <items>
+                        <MenuItem fx:id="basicUserButton" mnemonicParsing="false" text="Basic User" />
+                        <MenuItem fx:id="primeUserButton" mnemonicParsing="false" text="Prime User" />
+                        <MenuItem fx:id="distributorButton" mnemonicParsing="false" text="Distributor" />
+                     </items>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </MenuButton>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
    </children>
-</GridPane>
+</VBox>

@@ -22,7 +22,7 @@ public class PremiumShopper implements Shopper {
         price *= 0.8;
         shippingTime -= 2;
 
-        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType);
+        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, gpu.getDescription());
     }
 
     @Override
@@ -36,20 +36,20 @@ public class PremiumShopper implements Shopper {
         price *= 0.8;
         shippingTime -= 2;
 
-        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType);
+        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, potatoes.getDescription());
     }
 
     @Override
-    public DisplayShell visit(RentACarProduct deodorant, int quantity) {
-        int price = deodorant.getPricePerDay();
-        int shippingTime = deodorant.getShippingTime();
-        String handlingType = deodorant.getHandlingType().get(1);
-        Image image = deodorant.getImage();
-        String name = deodorant.getName();
+    public DisplayShell visit(RentACarProduct car, int quantity) {
+        int price = car.getPricePerDay();
+        int shippingTime = car.getShippingTime();
+        String handlingType = car.getHandlingType().get(1);
+        Image image = car.getImage();
+        String name = car.getName();
 
         price *= 0.8;
         shippingTime -= 2;
 
-        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType);
+        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, car.getDescription());
     }
 }

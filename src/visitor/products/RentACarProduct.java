@@ -19,6 +19,7 @@ public class RentACarProduct implements Product {
     private ArrayList<String> handlingType = new java.util.ArrayList<>(Arrays.asList("On an open trailer", "On a closed, climate controlled trailer"));
     private String name = "Lambo";
     private static Image carImage;
+    private static String description = "a rent a car"; //FIXME - fill this out
 
     public RentACarProduct() {
         try { //image was not happy with the string url, the file input stream fixed the problem
@@ -51,5 +52,9 @@ public class RentACarProduct implements Product {
 
     public Image getImage() {
         return carImage;
+    }
+
+    public String getDescription(){
+        return description;
     }
 }
