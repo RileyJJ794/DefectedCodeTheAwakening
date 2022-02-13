@@ -62,21 +62,13 @@ public class Amazon2Controller {
         setButtonMenuVisibility(false); //no user currently logged in
         logoutMenuSave = (Pane) mainDisplay.getChildren().get(0); //save the logout menu
 
-        logout.setOnAction((event) -> {
-            displayLogoutMenu();
-        });
+        logout.setOnAction((event) -> displayLogoutMenu());
 
-        basicUserButton.setOnAction((event) -> {
-            createCatalogMenu("Basic User", new BasicShopper(), products);
-        });
+        basicUserButton.setOnAction((event) -> createCatalogMenu("Basic User", new BasicShopper(), products));
 
-        primeUserButton.setOnAction((event) -> {
-            createCatalogMenu("Prime User", new PremiumShopper(), products);
-        });
+        primeUserButton.setOnAction((event) -> createCatalogMenu("Prime User", new PremiumShopper(), products));
 
-        distributorButton.setOnAction((event) -> {
-            createCatalogMenu("Distributor", new Distributor(), products);
-        });
+        distributorButton.setOnAction((event) -> createCatalogMenu("Distributor", new Distributor(), products));
     }
 
     private void setButtonMenuVisibility(Boolean isVisible) {
@@ -89,8 +81,8 @@ public class Amazon2Controller {
         numProducts.setVisible(true);
         switchViews.setText("Shopping Cart");
         switchViews.setOnAction((event) -> {
-            VBox newView = clearMainDisplay();
-            ShoppingCart cart = catalog.toShoppingCart(newView);
+            ShoppingCart cart = catalog.toShoppingCart();
+            clearMainDisplay();
             mainDisplay.getChildren().add(cart.getView());
             setCartButtonMenu(user, cart);
         });
@@ -102,8 +94,8 @@ public class Amazon2Controller {
         numProducts.setVisible(false);
         switchViews.setText("Back To Catalog");
         switchViews.setOnAction((event) -> {
-            VBox newView = clearMainDisplay();
-            Catalog catalog = cart.backToCatalog(products, newView);
+            Catalog catalog = cart.backToCatalog(products);
+            clearMainDisplay();
             mainDisplay.getChildren().add(cart.getView());
             setCatalogButtonMenu(user, catalog);
         });
@@ -125,7 +117,7 @@ public class Amazon2Controller {
 
     private void createCatalogMenu(String user, Shopper shopper, Collection<Product> products){
         VBox newView = clearMainDisplay();
-        Catalog catalog = new Catalog(shopper, products, newView);
+        Catalog catalog = new Catalog(shopper, products, newView, numProducts);
         mainDisplay.getChildren().add(catalog.getView());
         setCatalogButtonMenu(user, catalog);
     }

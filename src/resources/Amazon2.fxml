@@ -45,7 +45,7 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Label fx:id="numProducts" prefWidth="50.0" />
+                        <Label fx:id="numProducts" prefWidth="50.0" text="0"/>
                         <Button fx:id="logout" mnemonicParsing="false" text="Logout" />
                      </children>
                   </HBox>
