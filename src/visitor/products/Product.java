@@ -1,3 +1,8 @@
+/*
+ * SE 2811 031: Defected Code: The Visitor Pattern
+ * author: Andrew Crisler
+ */
+
 package visitor.products;
 
 import visitor.shoppers.Shopper;

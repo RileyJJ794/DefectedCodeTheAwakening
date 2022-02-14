@@ -1,3 +1,8 @@
+/*
+ * SE 2811 031: Defected Code: The Visitor Pattern
+ * author:
+ */
+
 package visitor.products;
 
 import javafx.scene.image.Image;
@@ -6,7 +11,6 @@ import visitor.display.DisplayShell;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,7 +23,8 @@ public class RentACarProduct implements Product {
     private ArrayList<String> handlingType = new java.util.ArrayList<>(Arrays.asList("On an open trailer", "On a closed, climate controlled trailer"));
     private String name = "Lambo";
     private static Image carImage;
-    private static String description = "a rent a car"; //FIXME - fill this out
+    private static String description = "The most elegant car money can buy. " +
+            "This car gives a whole new experience to driving";
 
     public RentACarProduct() {
         try { //image was not happy with the string url, the file input stream fixed the problem

@@ -1,3 +1,8 @@
+/*
+ * SE 2811 031: Defected Code: The Visitor Pattern
+ * author:
+ */
+
 package visitor.products;
 
 import javafx.scene.image.Image;
@@ -18,7 +23,8 @@ public class GPU implements Product {
     private ArrayList<String> handlingType = new ArrayList<>(Arrays.asList("Plain Box", "RGB Box"));
     private final String name = "Nvidia GeForce RTX 3090";
     private Image gpuImage;
-    private static String description = "a gpu"; //FIXME - fill this out
+    private static String description = "we bought this gpu for a reasonable price and " +
+            "are now selling it back to you for five times the price";
 
     public GPU() {
         try { //image was not happy with the string url, the file input stream fixed the problem

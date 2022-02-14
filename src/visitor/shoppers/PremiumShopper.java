@@ -1,3 +1,8 @@
+/*
+ * SE 2811 031: Defected Code: The Visitor Pattern
+ * author:
+ */
+
 package visitor.shoppers;
 
 import javafx.scene.image.Image;
@@ -13,7 +18,7 @@ import visitor.products.Potatoes;
 public class PremiumShopper implements Shopper {
     @Override
     public DisplayShell visit(GPU gpu, int quantity) {
-        int price = gpu.getPrice();
+        double price = gpu.getPrice();
         int shippingTime = gpu.getShippingTime();
         String handlingType = gpu.getHandlingType().get(1);
         Image image = gpu.getGpuImage();
@@ -22,12 +27,12 @@ public class PremiumShopper implements Shopper {
         price *= 0.8;
         shippingTime -= 2;
 
-        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, gpu.getDescription());
+        return new DisplayShell(image, name, "$" + price, shippingTime + " days", handlingType, gpu.getDescription());
     }
 
     @Override
     public DisplayShell visit(Potatoes potatoes, int quantity) {
-        int price = potatoes.getPrice();
+        double price = potatoes.getPrice();
         int shippingTime = potatoes.getShippingTime();
         String handlingType = potatoes.getHandlingType().get(1);
         Image image = potatoes.getPotatoImage();
@@ -36,12 +41,12 @@ public class PremiumShopper implements Shopper {
         price *= 0.8;
         shippingTime -= 2;
 
-        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, potatoes.getDescription());
+        return new DisplayShell(image, name, "$" + price, shippingTime + " days", handlingType, potatoes.getDescription());
     }
 
     @Override
     public DisplayShell visit(RentACarProduct car, int quantity) {
-        int price = car.getPricePerDay();
+        double price = car.getPricePerDay();
         int shippingTime = car.getShippingTime();
         String handlingType = car.getHandlingType().get(1);
         Image image = car.getImage();
@@ -50,6 +55,6 @@ public class PremiumShopper implements Shopper {
         price *= 0.8;
         shippingTime -= 2;
 
-        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, car.getDescription());
+        return new DisplayShell(image, name, "$" + price, shippingTime + " days", handlingType, car.getDescription());
     }
 }

@@ -1,3 +1,8 @@
+/*
+ * SE 2811 031: Defected Code: The Visitor Pattern
+ * author:
+ */
+
 package visitor.shoppers;
 
 import javafx.scene.image.Image;
@@ -18,7 +23,7 @@ public class BasicShopper implements Shopper {
         String handlingType = gpu.getHandlingType().get(0); //get worst handling type
         Image image = gpu.getGpuImage();
         String name = gpu.getName();
-        return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, gpu.getDescription());
+        return new DisplayShell(image, name, "$" + price, shippingTime + " days", handlingType, gpu.getDescription());
     }
 
     @Override
@@ -28,7 +33,7 @@ public class BasicShopper implements Shopper {
         String handlingType = potatoes.getHandlingType().get(0); //get worst handling type
         String name = potatoes.getName();
         return new DisplayShell(potatoes.getPotatoImage(), name,
-                Integer.toString(price), Integer.toString(shippingTime), handlingType, potatoes.getDescription());
+                "$" + price, shippingTime + " days", handlingType, potatoes.getDescription());
     }
 
     @Override
@@ -37,6 +42,6 @@ public class BasicShopper implements Shopper {
         int shippingTime = car.getShippingTime();
         String handlingType = car.getHandlingType().get(0); //get worst handling type
         return new DisplayShell(car.getImage(), car.getName(),
-                Integer.toString(price), Integer.toString(shippingTime), handlingType, car.getDescription());
+                "$" + price, shippingTime + " days", handlingType, car.getDescription());
     }
 }

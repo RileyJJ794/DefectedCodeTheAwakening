@@ -1,9 +1,6 @@
 /*
- * Course:     SE 2811
- * Term:       Winter 2020-21
- * Assignment: Lab 4 Bees
- * Author:     Andrew Crisler
- * Date:       1/5
+ * SE 2811 031: Defected Code: The Visitor Pattern
+ * author: Andrew Crisler
  */
 
 package visitor.display;

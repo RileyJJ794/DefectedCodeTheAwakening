@@ -1,3 +1,8 @@
+/*
+ * SE 2811 031: Defected Code: The Visitor Pattern
+ * author: Andrew Crisler
+ */
+
 package visitor.display;
 
 import javafx.geometry.Insets;
@@ -11,10 +16,12 @@ import visitor.products.Product;
 import visitor.shoppers.Shopper;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
+/**
+ * The catalog is responsible for creating a display of all products the store has to offer, and
+ * to collect the users purchases.
+ */
 public class Catalog {
     private Shopper shopper;
     private Collection<Product> products;
@@ -60,7 +67,6 @@ public class Catalog {
 
             Pane productDisplay = product.accept(shopper, 1).displayMain();
             HBox productCard = new HBox(productDisplay, new VBox(textField, button));
-//            productCard.setPadding(new Insets(10,10,10,10));
             productCard.setStyle("-fx-background-color: lightgray;");
             VBox.setMargin(productCard, new Insets(10));
 
@@ -73,6 +79,10 @@ public class Catalog {
         return catalogView;
     }
 
+    /**
+     * This method is to create a shopping cart out of the state held by this catalog.
+     * @return a shopping cart instance
+     */
     public ShoppingCart toShoppingCart(){
         return new ShoppingCart(shopper, productsInCart, catalogView, numProductsInCart);
     }
