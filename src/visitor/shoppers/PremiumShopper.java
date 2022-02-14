@@ -11,6 +11,8 @@ import visitor.products.Potatoes;
  * shipping and handling.
  */
 public class PremiumShopper implements Shopper {
+    double discount = 0.8;
+    int shippingExpress = 2;
     @Override
     public DisplayShell visit(GPU gpu, int quantity) {
         int price = gpu.getPrice();
@@ -19,8 +21,8 @@ public class PremiumShopper implements Shopper {
         Image image = gpu.getGpuImage();
         String name = gpu.getName();
 
-        price *= 0.8;
-        shippingTime -= 2;
+        price *= discount;
+        shippingTime -= shippingExpress;
 
         return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, gpu.getDescription());
     }
@@ -33,8 +35,8 @@ public class PremiumShopper implements Shopper {
         Image image = potatoes.getPotatoImage();
         String name = potatoes.getName();
 
-        price *= 0.8;
-        shippingTime -= 2;
+        price *= discount;
+        shippingTime -= shippingExpress;
 
         return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, potatoes.getDescription());
     }
@@ -47,8 +49,8 @@ public class PremiumShopper implements Shopper {
         Image image = car.getImage();
         String name = car.getName();
 
-        price *= 0.8;
-        shippingTime -= 2;
+        price *= discount;
+        shippingTime -= shippingExpress;
 
         return new DisplayShell(image, name, Integer.toString(price), Integer.toString(shippingTime), handlingType, car.getDescription());
     }
