@@ -13,7 +13,7 @@ import java.util.Arrays;
  * A GPU will be prices by the amount
  */
 public class GPU implements Product {
-    private int price = 100000;
+    private int price = 1000;
     private int shippingTime = 8;
     private ArrayList<String> handlingType = new ArrayList<>(Arrays.asList("Plain Box", "RGB Box"));
     private final String name = "Nvidia GeForce RTX 3090";
