@@ -59,13 +59,13 @@ public class Catalog {
             button.setPrefWidth(100);
             VBox.setMargin(button, new Insets(10,0,0,0));
             button.setOnAction((event) -> {
-                int amount = textField.getText().equals("") ? 0 : Integer.parseInt(textField.getText());
+                int amount = textField.getText().equals("") ? 1 : Integer.parseInt(textField.getText());
                 productsInCart.add(new PurchaseOrder(product, amount));
                 numProductsInCart.setText("" + (Integer.parseInt(numProductsInCart.getText()) + 1));
                 button.setText("Buy Another");
             });
 
-            Pane productDisplay = product.accept(shopper, 1).displayMain(); //using visitor pattern to get display
+            Pane productDisplay = product.accept(shopper, 1).displayMain(); product.accept(shopper, 1).displayMain(); //using visitor pattern to get display
             HBox productCard = new HBox(productDisplay, new VBox(textField, button));
             productCard.setStyle("-fx-background-color: lightgray;");
             VBox.setMargin(productCard, new Insets(10));

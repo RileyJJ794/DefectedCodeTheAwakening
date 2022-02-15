@@ -23,7 +23,7 @@ public class Distributor implements Shopper {
 
     @Override
     public DisplayShell visit(GPU gpu, int quantity) {
-        int price = gpu.getPrice() * quantity * gpuQuantity;
+        int price = gpu.getPrice() * gpuQuantity;
         int shippingTime = gpu.getShippingTime();
         Image image = gpu.getGpuImage();
         String name = gpu.getName().concat(" x").concat(Integer.toString(gpuQuantity).concat(" units"));
@@ -33,7 +33,7 @@ public class Distributor implements Shopper {
 
     @Override
     public DisplayShell visit(Potatoes potatoes, int quantity) {
-        int price = potatoes.getPrice() * quantity * potatoesQuantity;
+        int price = potatoes.getPrice() * potatoesQuantity;
         int shippingTime = potatoes.getShippingTime();
         String name = potatoes.getName().concat(" x").concat(Integer.toString(potatoesQuantity).concat(" units"));;
         return new DisplayShell(potatoes.getPotatoImage(), name,
@@ -43,7 +43,7 @@ public class Distributor implements Shopper {
 
     @Override
     public DisplayShell visit(RentACarProduct car, int quantity) {
-        int price = car.getPricePerDay() * quantity * rentACarQuantity;
+        int price = car.getPricePerDay() * rentACarQuantity;
         int shippingTime = car.getShippingTime();
         return new DisplayShell(car.getImage(),
                 car.getName().concat(" x").concat(Integer.toString(rentACarQuantity).concat(" units")),
