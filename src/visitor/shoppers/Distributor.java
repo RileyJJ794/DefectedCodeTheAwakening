@@ -17,13 +17,14 @@ import visitor.display.DisplayShell;
  */
 public class Distributor implements Shopper {
     private final String handlingType = "Shipping Container";
+    private final double priceMultiplier = 0.6;
     private final int rentACarQuantity = 5; //quantity of cars that must be purchased at a time by distributor
     private final int gpuQuantity = 10; //quantity of gpus that must be purchased at a time by a distributor
     private final int potatoesQuantity = 50; //quantity of potatoes that must be purchased at a time by a distributor
 
     @Override
     public DisplayShell visit(GPU gpu, int quantity) {
-        int price = gpu.getPrice() * gpuQuantity;
+        double price = gpu.getPrice() * gpuQuantity * priceMultiplier;
         int shippingTime = gpu.getShippingTime();
         Image image = gpu.getGpuImage();
         String name = gpu.getName().concat(" x").concat(Integer.toString(gpuQuantity).concat(" units"));
@@ -33,7 +34,7 @@ public class Distributor implements Shopper {
 
     @Override
     public DisplayShell visit(Potatoes potatoes, int quantity) {
-        int price = potatoes.getPrice() * potatoesQuantity;
+        double price = potatoes.getPrice() * potatoesQuantity * priceMultiplier;
         int shippingTime = potatoes.getShippingTime();
         String name = potatoes.getName().concat(" x").concat(Integer.toString(potatoesQuantity).concat(" units"));;
         return new DisplayShell(potatoes.getPotatoImage(), name,
@@ -43,7 +44,7 @@ public class Distributor implements Shopper {
 
     @Override
     public DisplayShell visit(RentACarProduct car, int quantity) {
-        int price = car.getPricePerDay() * rentACarQuantity;
+        double price = car.getPricePerDay() * rentACarQuantity * priceMultiplier;
         int shippingTime = car.getShippingTime();
         return new DisplayShell(car.getImage(),
                 car.getName().concat(" x").concat(Integer.toString(rentACarQuantity).concat(" units")),
