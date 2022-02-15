@@ -1,6 +1,6 @@
 /*
  * SE 2811 031: Defected Code: The Visitor Pattern
- * author:
+ * author: Riley Jensen
  */
 
 package visitor.products;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * The potatoes will be priced by the pound
+ * This class represents
  */
 public class Potatoes implements Product {
     private int pricePerPound = 1;

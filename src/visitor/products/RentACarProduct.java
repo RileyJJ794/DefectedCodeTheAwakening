@@ -1,6 +1,6 @@
 /*
  * SE 2811 031: Defected Code: The Visitor Pattern
- * author:
+ * author: Riley Jensen
  */
 
 package visitor.products;
