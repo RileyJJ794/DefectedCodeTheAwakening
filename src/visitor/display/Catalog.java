@@ -65,7 +65,7 @@ public class Catalog {
                 button.setText("Buy Another");
             });
 
-            Pane productDisplay = product.accept(shopper, 1).displayMain();
+            Pane productDisplay = product.accept(shopper, 1).displayMain(); //using visitor pattern to get display
             HBox productCard = new HBox(productDisplay, new VBox(textField, button));
             productCard.setStyle("-fx-background-color: lightgray;");
             VBox.setMargin(productCard, new Insets(10));
