@@ -16,6 +16,13 @@ import visitor.products.RentACarProduct;
  */
 public class BasicShopper implements Shopper {
 
+    /**
+     * Scalps a gpu to the user, as there are no adjustments
+     * made other than price being multiplied by quantity.
+     * @param gpu instance of the GPU class to be modified
+     * @param quantity the number of GPUs the customer is ordering
+     * @return DisplayShell holding all of the modified values
+     */
     @Override
     public DisplayShell visit(GPU gpu, int quantity) {
         int price = gpu.getPrice() * quantity;
@@ -26,6 +33,13 @@ public class BasicShopper implements Shopper {
         return new DisplayShell(image, name, "$" + price, shippingTime + " days", handlingType, gpu.getDescription());
     }
 
+    /**
+     * Makes no changes to the behavior other than multiplying the price
+     * by the quantity.
+     * @param potatoes instance of the potatoes class to be modified
+     * @param quantity the number of potatoes the customer is ordering
+     * @return DisplayShell holding all of the modified potato values
+     */
     @Override
     public DisplayShell visit(Potatoes potatoes, int quantity) {
         int price = potatoes.getPrice() * quantity;
@@ -36,6 +50,13 @@ public class BasicShopper implements Shopper {
                 "$" + price, shippingTime + " days", handlingType, potatoes.getDescription());
     }
 
+    /**
+     * Adjusts none of the values other than multiplying the
+     * price by quantity before returning.
+     * @param car instance of the RentACarProduct class to be modified
+     * @param quantity the number of RentACars the customer is renting
+     * @return DisplayShell holding all of the modified values
+     */
     @Override
     public DisplayShell visit(RentACarProduct car, int quantity) {
         int price = car.getPricePerDay() * quantity;

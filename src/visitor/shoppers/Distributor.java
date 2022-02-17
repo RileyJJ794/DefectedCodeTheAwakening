@@ -22,6 +22,13 @@ public class Distributor implements Shopper {
     private final int gpuQuantity = 10; //quantity of gpus that must be purchased at a time by a distributor
     private final int potatoesQuantity = 50; //quantity of potatoes that must be purchased at a time by a distributor
 
+    /**
+     * Adjusts the price, shipping time, container, and turns
+     * the order into batches of GPUs
+     * @param gpu instance of the GPU class to be modified
+     * @param quantity the number of GPUs the customer is ordering
+     * @return DisplayShell holding all of the modified values
+     */
     @Override
     public DisplayShell visit(GPU gpu, int quantity) {
         double price = gpu.getPrice() * gpuQuantity * priceMultiplier;
@@ -32,6 +39,13 @@ public class Distributor implements Shopper {
                 shippingTime + " days", handlingType, gpu.getDescription());
     }
 
+    /**
+     * Adjusts the price, shipping time, container, and turns
+     * the order into batches of potatoes
+     * @param potatoes instance of the potatoes class to be modified
+     * @param quantity the number of potatoes the customer is ordering
+     * @return DisplayShell holding all of the modified potato values
+     */
     @Override
     public DisplayShell visit(Potatoes potatoes, int quantity) {
         double price = potatoes.getPrice() * potatoesQuantity * priceMultiplier;
@@ -42,6 +56,14 @@ public class Distributor implements Shopper {
                 shippingTime + " days", handlingType, potatoes.getDescription());
     }
 
+    /**
+     *
+     * Adjusts the price, shipping time, container, and turns
+     * the order into batches of RentACars
+     * @param car instance of the RentACarProduct class to be modified
+     * @param quantity the number of RentACars the customer is renting
+     * @return DisplayShell holding all of the modified values
+     */
     @Override
     public DisplayShell visit(RentACarProduct car, int quantity) {
         double price = car.getPricePerDay() * rentACarQuantity * priceMultiplier;
