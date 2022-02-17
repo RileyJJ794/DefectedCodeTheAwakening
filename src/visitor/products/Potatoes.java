@@ -15,7 +15,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * This class represents
+ * This class represents a potato that is priced by the pound.
+ * Responsible for all the base information about a potato
  */
 public class Potatoes implements Product {
     private int pricePerPound = 1;
