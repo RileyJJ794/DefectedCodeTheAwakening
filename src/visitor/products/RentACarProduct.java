@@ -1,6 +1,6 @@
 /*
  * SE 2811 031: Defected Code: The Visitor Pattern
- * author:
+ * author: Riley Jensen
  */
 
 package visitor.products;
@@ -16,6 +16,7 @@ import java.util.Arrays;
 
 /**
  * The RentACarProduct will be priced by the time it is rented (per hour or day)
+ * Responsible for holding all the base information of a Rent-a-Car
  */
 public class RentACarProduct implements Product {
     private int pricePerDay =  250;
